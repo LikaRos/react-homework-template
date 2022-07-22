@@ -10,11 +10,11 @@ export class App extends Component {
 
   addContactData = ({ name, phone, id }) => {
     const contact = { name, phone, id };
-    const newContact = this.state.contacts.find(
+    const oldContact = this.state.contacts.find(
       contact => contact.name === name
     );
-    if (newContact) {
-      alert(' ');
+    if (oldContact) {
+      return alert(`${name} is already in contact`);
     }
 
     this.setState(prevState => ({
